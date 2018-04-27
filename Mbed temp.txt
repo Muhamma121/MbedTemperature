@@ -1,0 +1,14 @@
+#include "mbed.h"
+#include "LM75B.h"
+ 
+LM75B tmp(p28,p27);
+ 
+int main ()
+{
+    while (1) {
+        printf("%.2f\n",tmp.read());
+        printf("Temp in celcius is: %.2f\n",tmp.read()/256.0);
+        wait(1.0);
+    }
+}
+
